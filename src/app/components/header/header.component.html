@@ -1,0 +1,62 @@
+<header class="header">
+  <div class="header__logo">
+    <a href="#">
+      <img src="assets/images/header_logo.svg" alt="">
+    </a>
+  </div>
+
+  <div class="header__menu">
+    <nav>
+      <ul class="header__ul">
+        <li><a>МЕНЮ</a></li>
+        <li><a [routerLink]="[ '/thai-market' ]" routerLinkActive="active">THAI MARKET</a></li>
+        <li><a [routerLink]="[ '/delivery' ]" routerLinkActive="active">ДOСТАВКА</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <div class="header__right">
+    <div class="header__language">
+      <a href="">ENG</a>
+    </div>
+
+    <div class="header__btn">
+      <a href="">Залишити відгук</a>
+    </div>
+
+    <a class="header__img-liked" [routerLink]="[ '/favorite' ]" routerLinkActive="active">
+      <img src="assets/images/header_heart.png" alt="">
+    </a>
+
+    <div class="header__img-phone-wrapper">
+
+      <div class="header__img-phone">
+        <img src="assets/images/header_phone.png" alt="">
+      </div>
+
+      <div class="header__phone-info">
+        <div class="header__phone">
+          <a href="tel:+380677929090">+38 (067) 792 90 90</a>
+        </div>
+
+        <p class="header__text">Працюємо Пн - Нд з <span>10:00</span> до <span>22:50</span></p>
+      </div>
+    </div>
+
+    <div class="header__auth">
+      <div class="header__auth-wrapper">
+        <img src="assets/images/header_user.svg" alt="">
+        <span>Вхід</span>
+      </div>
+
+    </div>
+
+    <div class="header__burger-menu">
+      <div class="header__border">
+      </div>
+
+    </div>
+
+  </div>
+</header>

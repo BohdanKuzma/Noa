@@ -1,1 +1,130 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+// ****************** ШРИФТ ****************************
+
+// &display=swap&subset=cyrillic-ext
+// @import url();
+
+// @import url("https://fonts.googleapis.com/css?family=Poppins:regular,500&display=swap");
+
+// // Poppins
+
+// @import url("https://fonts.googleapis.com/css?family=Alef:regular,700&display=swap");
+
+// // Alef
+
+// @import url("https://fonts.googleapis.com/css?family=Inter:regular");
+
+// // Inter
+
+// $fontFamily: 'Poppins';
+
+
+
+
+// ****************** ШРИФТ ****************************
+
+@font-face {
+  font-family: 'Cera Round Pro', sans-serif;
+  src: url(assets/fonts/Fontspring-DEMO-ceraroundpro-black.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Cera Round Pro', sans-serif;
+  src: url(assets/fonts/Fontspring-DEMO-ceraroundpro-black.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Cera Round Pro', sans-serif;
+  src: url(assets/fonts/Fontspring-DEMO-ceraroundpro-light.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Cera Round Pro', sans-serif;
+  src: url(assets/fonts/Fontspring-DEMO-ceraroundpro-medium.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Cera Round Pro', sans-serif;
+  src: url(assets/fonts/Fontspring-DEMO-ceraroundpro-regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Cera Round Pro', sans-serif;
+  src: url(assets/fonts/Fontspring-DEMO-ceraroundpro-thin.ttf) format('truetype');
+}
+
+
+
+
+// ****************** ЗМІННІ ****************************
+
+$maxWidthContainer: 1400px;
+
+$md1: $maxWidthContainer+12;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 479.98px;
+
+$texColor: #6B6B6B;
+
+$backgroundColor: #fff;
+
+$fontSize: 16px;
+
+// ****************** ЗМІННІ ****************************
+
+
+//  *******************************************
+@import '/src/app/shared/styles/reset';
+@import '/src/app/shared/styles/ui';
+
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: $fontSize;
+  background-color: $backgroundColor;
+  color: $texColor;
+  font-family: 'Cera Round Pro', sans-serif;
+
+  &._lock {
+    overflow: hidden;
+  }
+}
+
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.page {
+  flex: 1 1 auto;
+  margin-top: 105px;
+}
+
+.__container {
+  padding: 0 10px;
+  max-width: $maxWidthContainer + 10px;
+  margin: 0 auto;
+
+  @media (max-width: $md1) {
+    max-width: 970px;
+  }
+
+  @media (max-width: $md2) {
+    max-width: 750px;
+  }
+
+  @media (max-width: $md3) {
+    max-width: none;
+  }
+}
