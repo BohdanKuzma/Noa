@@ -204,9 +204,43 @@
     }
   }
 
-  &__info-text{
-    h1{
-        margin-bottom: 5px;
+  &__info-text {
+    h1 {
+      margin-bottom: 5px;
+    }
+  }
+
+  .yellow {
+    color: #ffcc00;
+  }
+
+  .yellow-b {
+    &:before {
+      content: "";
+      position: absolute;
+      left: -25px;
+      top: 2px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid #ffcc00;
+    }
+  }
+
+  .red {
+    color: #EF2F3D;
+  }
+
+  .red-b {
+    &:before {
+      content: "";
+      position: absolute;
+      left: -25px;
+      top: 2px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid #EF2F3D;
     }
   }
 }
