@@ -11,6 +11,8 @@ import { ProductComponent } from './pages/product/product/product.component';
 import { ThaiMarketComponent } from './pages/thai-market/thai-market/thai-market.component';
 import { FavoritesComponent } from './pages/favorites/favorites/favorites.component';
 import { HomeComponent } from './pages/home/home/home.component';
+import { ContactsComponent } from './pages/contacts/contacts.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HomeComponent } from './pages/home/home/home.component';
     ProductComponent,
     ThaiMarketComponent,
     FavoritesComponent,
-    HomeComponent
+    HomeComponent,
+    ContactsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
