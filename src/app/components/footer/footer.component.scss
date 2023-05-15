@@ -365,6 +365,14 @@
 
   }
 
+  
+  &__bottom-right {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+
+  }
+
   &__bottom-mobile {
     display: flex;
     justify-content: space-between;

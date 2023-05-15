@@ -34,7 +34,13 @@
         width: 80px;
         height: 40px;
       }
+
+      @media (max-width:590px) {
+        width: 70px;
+        height: 35px;
+      }
     }
+
   }
 
   // .header__menu
