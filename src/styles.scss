@@ -121,6 +121,10 @@ body {
 .page {
   flex: 1 1 auto;
   margin-top: 105px;
+
+  @media (max-width:990px) {
+    margin-top: 65px;
+  }
 }
 
 .__container {

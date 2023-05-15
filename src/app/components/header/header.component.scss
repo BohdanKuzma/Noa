@@ -10,12 +10,31 @@
   padding: 0px 35px;
   z-index: 100;
 
+
+  @media (max-width:1290px) {
+    height: 80px;
+    padding: 0px 5px;
+  }
+
+
+  @media (max-width:990px) {
+    height: 60px;
+    padding: 0px 5px;
+  }
+
   // .header__logo
 
   &__logo {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    img {
+      @media (max-width:990px) {
+        width: 80px;
+        height: 40px;
+      }
+    }
   }
 
   // .header__menu
@@ -35,6 +54,15 @@
     font-weight: 500;
     justify-content: space-between;
 
+    @media (max-width:990px) {
+      padding: 21px 15px;
+    }
+
+    @media (max-width:590px) {
+      padding: 5px 5px;
+    }
+
+
     li {
       width: 125px;
       display: flex;
@@ -42,6 +70,9 @@
       align-items: center;
       color: #fff;
 
+      @media (max-width:990px) {
+        width: 65px;
+      }
 
       a {
         display: flex;
@@ -49,6 +80,10 @@
         align-items: center;
         color: #fff;
         cursor: pointer;
+
+        @media (max-width:990px) {
+          font-size: 12px;
+        }
 
         &:hover {
           @media (min-width:992px) {
@@ -60,6 +95,18 @@
     }
   }
 
+  &__delivery {
+    @media (max-width:990px) {
+      display: none !important
+    }
+  }
+
+  &__thai {
+    @media (max-width:990px) {
+      display: none !important
+    }
+  }
+
   // .header__right
 
   &__right {
@@ -68,7 +115,22 @@
     align-items: center;
     width: 974px;
     padding: 23px 30px;
+
+    @media (max-width:1290px) {
+      width: 374px;
+    }
+
+    @media (max-width:990px) {
+      width: 274px;
+      padding: 0px 10px;
+    }
+
+    // @media (max-width:590px) {
+    //   width: 197px;
+    // }
   }
+
+
 
   // .header__language
 
@@ -79,6 +141,10 @@
 
     a {
       color: #fff;
+
+      @media (max-width:990px) {
+        font-size: 14px;
+      }
     }
   }
 
@@ -96,6 +162,10 @@
     text-transform: uppercase;
     cursor: pointer;
 
+    @media (max-width:1290px) {
+      display: none;
+    }
+
     &:hover {
       @media (min-width:992px) {
         background: #2d7d7d;
@@ -109,13 +179,17 @@
       align-items: center;
       color: #fff;
     }
-
   }
 
   // .header__img-liked
   &__img-liked {
     width: 47px;
     height: 47px;
+
+    @media (max-width:590px) {
+      width: 35px;
+      height: 35px;
+    }
 
     img {
       width: 100%;
@@ -132,7 +206,6 @@
 
   &__img-phone-wrapper {
     display: flex;
-
   }
 
   &__phone-info {
@@ -140,11 +213,19 @@
     flex-direction: column;
     justify-content: center;
     margin-left: 15px;
+
+    @media (max-width:1590px) {
+      display: none;
+    }
   }
 
   &__img-phone {
     width: 47px;
     height: 47px;
+
+    @media (max-width:990px) {
+      display: none;
+    }
 
     img {
       width: 100%;
@@ -180,9 +261,6 @@
     }
   }
 
-
-
-
   // .header__auth
 
   &__auth {
@@ -203,6 +281,10 @@
       margin-left: 5px;
       cursor: pointer;
 
+      @media (max-width:990px) {
+        font-size: 14px;
+      }
+
       &:hover {
         @media (min-width:992px) {
           transition: all .3s;
@@ -221,6 +303,11 @@
     background-color: rgb(45, 125, 125);
     position: relative;
     cursor: pointer;
+
+    @media (max-width:990px) {
+      width: 35px;
+      height: 35px;
+    }
   }
 
   // .header__circle
@@ -234,6 +321,13 @@
     position: absolute;
     top: 24px;
     left: 14px;
+
+    @media (max-width:990px) {
+      top: 17px;
+      left: 8px;
+    }
+
+
 
 
     &::before {
