@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ICategoryResponse } from 'src/app/shared/interfaces/category.interface';
+import { CategoryService } from 'src/app/shared/services/category/category.service';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +8,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+  public userCategory: Array<ICategoryResponse> = [];
+
+  public currentProduct!: ICategoryResponse;
+
+
+  constructor(
+   private categoryService: CategoryService
+  ) { }
+
+  ngOnInit(): void {
+    this.getData()
+  }
+
+  getData(): void {
+    this.categoryService.getAllFirebase().subscribe(data => {
+      this.userCategory = data as ICategoryResponse[]
+    })
+  }
 
 }

@@ -26,7 +26,7 @@ export class HomeComponent {
   
   getData(): void {
     this.productService.getAllFirebase().subscribe(data => {
-      this.userProducts = data.filter(item => item['category']['path'] == 'roly') as IProductResponse[]
+      this.userProducts = data as IProductResponse[]
     })
   }
 
