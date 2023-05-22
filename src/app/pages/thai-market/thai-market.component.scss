@@ -4,6 +4,7 @@
 
   &__container {
     width: 100%;
+    padding: 0px 100px;
   }
 
   // .home__slider
@@ -173,10 +174,9 @@
   // .home__product-item
 
   &__product-item {
-    width: 30%;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
+    width: 26%;
+    padding: 20px;
+
 
     @media (max-width:1290px) {
       width: 45%;

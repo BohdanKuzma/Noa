@@ -2,13 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
-import { DeliveryComponent } from './pages/delivery/delivery/delivery.component';
-import { ProductComponent } from './pages/product/product/product.component';
-import { ThaiMarketComponent } from './pages/thai-market/thai-market/thai-market.component';
-import { FavoritesComponent } from './pages/favorites/favorites/favorites.component';
-import { HomeComponent } from './pages/home/home/home.component';
+import { DeliveryComponent } from './pages/delivery/delivery.component';
+import { ProductComponent } from './pages/product/product.component';
+import { ThaiMarketComponent } from './pages/thai-market/thai-market.component';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
+import { HomeComponent } from './pages/home/home.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { AboutComponent } from './pages/about/about.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminProductComponent } from './admin/admin-product/admin-product.component';
+import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
+import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,6 +23,14 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
+  {
+    path: "admin", component: AdminComponent, children: [
+      { path: "category", component: AdminCategoryComponent },
+      { path: "product", component: AdminProductComponent },
+      { path: "orders", component: AdminOrdersComponent },
+      { path: "", pathMatch: "full", redirectTo: "category" },
+    ]
+  }
 ];
 
 @NgModule({

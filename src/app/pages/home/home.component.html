@@ -14,168 +14,49 @@
           <li class="home__categories-list-item"><a href="">Culinasia special</a></li>
           <li class="home__categories-list-item"><a href="">Сніданки до 18:00</a></li>
           <li class="home__categories-list-item"><a href="">Стартери</a></li>
+          <li class="home__categories-list-item"><a href="">Рамен</a></li>
           <li class="home__categories-list-item"><a href="">Asian Wok</a></li>
           <li class="home__categories-list-item"><a href="">Asian Poke</a></li>
           <li class="home__categories-list-item"><a href="">Суші-бургери</a></li>
-          <li class="home__categories-list-item"><a href="">Хот роли</a></li>
+          <li class="home__categories-list-item"><a href="">Роли та мак суші</a></li>
+          <li class="home__categories-list-item"><a href="">Роли</a></li>
+          <li class="home__categories-list-item"><a href="">Сети</a></li>
+          <li class="home__categories-list-item"><a href="">Десерти</a></li>
           <li class="home__categories-list-item"><a href="">Напої</a></li>
-          <li class="home__categories-list-item"><a href="">Culinasia special</a></li>
-          <li class="home__categories-list-item"><a href="">Сніданки до 18:00</a></li>
-          <li class="home__categories-list-item"><a href="">Стартери</a></li>
-          <li class="home__categories-list-item"><a href="">Asian Wok</a></li>
-          <li class="home__categories-list-item"><a href="">Asian Poke</a></li>
-          <li class="home__categories-list-item"><a href="">Суші-бургери</a></li>
-          <li class="home__categories-list-item"><a href="">Хот роли</a></li>
-          <li class="home__categories-list-item"><a href="">Напої</a></li>
+          <li class="home__categories-list-item"><a href="">Алкогольні напої 18+</a></li>
         </ul>
       </div>
 
       <div class="home__wrapper-products">
-        <div class="home__product-item">
+        <div class="home__product-item" *ngFor="let product of userProducts">
           <div class="home__product-img">
-            <img src="https://noa.ua/wp-content/uploads/2023/04/laksa-350x350.webp" alt="">
+            <img [src]="product.imgPath" alt="">
           </div>
 
           <div class="home__product-wrapper-title">
-            <a href="">Lorem, ipsum dolor.</a>
-            <span>259</span>
+            <a>{{product.title}}</a>
+            <span>{{product.price}}</span>
           </div>
 
           <div class="home__product-desc">
             <a href=""></a>
-            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, quia!</span>
+            <span>{{product.desc}}</span>
           </div>
 
           <div class="home__product-controls">
             <div class="home__btns">
-              <button class="home__btn-minus btn">-</button>
-              <input class="home__number" type="text" value="1" readonly>
-              <button class="home__btn-plus btn">+</button>
-            </div>
-
-            <button class="home__order">Замовити</button>
-          </div>
-
-        </div>
-
-        <div class="home__product-item">
-          <div class="home__product-img">
-            <img src="https://noa.ua/wp-content/uploads/2023/04/laksa-350x350.webp" alt="">
-          </div>
-
-          <div class="home__product-wrapper-title">
-            <a href="">Lorem, ipsum dolor.</a>
-            <span>259</span>
-          </div>
-
-          <div class="home__product-desc">
-            <a href=""></a>
-            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, quia!</span>
-          </div>
-
-          <div class="home__product-controls">
-            <div class="home__btns">
-              <button class="home__btn-minus btn">-</button>
-              <input class="home__number" type="text" value="1" readonly>
-              <button class="home__btn-plus btn">+</button>
+              <button type="button" class="home__btn-minus btn" (click)="productCount(product, false)">-</button>
+              <input class="home__number" type="text" [value]="product.count" readonly>
+              <button type="button" class="home__btn-plus btn" (click)="productCount(product, true)">+</button>
             </div>
             <button class="home__order">Замовити</button>
           </div>
-        </div>
-
-        <div class="home__product-item">
-          <div class="home__product-img">
-            <img src="https://noa.ua/wp-content/uploads/2023/04/laksa-350x350.webp" alt="">
-          </div>
-
-          <div class="home__product-wrapper-title">
-            <a href="">Lorem, ipsum dolor.</a>
-            <span>259</span>
-          </div>
-
-          <div class="home__product-desc">
-            <a href=""></a>
-            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, quia!</span>
-          </div>
-
-          <div class="home__product-controls">
-            <div class="home__btns">
-              <button class="home__btn-minus btn">-</button>
-              <input class="home__number" type="text" value="1" readonly>
-              <button class="home__btn-plus btn">+</button>
-            </div>
-
-            <button class="home__order">Замовити</button>
-
-          </div>
-        </div>
-
-
-        <div class="home__product-item">
-          <div class="home__product-img">
-            <img src="https://noa.ua/wp-content/uploads/2023/04/laksa-350x350.webp" alt="">
-          </div>
-
-          <div class="home__product-wrapper-title">
-            <a href="">Lorem, ipsum dolor.</a>
-            <span>259</span>
-          </div>
-
-          <div class="home__product-desc">
-            <a href=""></a>
-            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, quia!</span>
-          </div>
-
-          <div class="home__product-controls">
-            <div class="home__btns">
-              <button class="home__btn-minus btn">-</button>
-              <input class="home__number" type="text" value="1" readonly>
-              <button class="home__btn-plus btn">+</button>
-            </div>
-
-            <button class="home__order">Замовити</button>
-
-
-          </div>
-
-        </div>
-
-        <div class="home__product-item">
-          <div class="home__product-img">
-            <img src="https://noa.ua/wp-content/uploads/2023/04/laksa-350x350.webp" alt="">
-          </div>
-
-          <div class="home__product-wrapper-title">
-            <a href="">Lorem, ipsum dolor.</a>
-            <span>259</span>
-          </div>
-
-          <div class="home__product-desc">
-            <a href=""></a>
-            <span>Lorem ipsum dolor sit amet.</span>
-          </div>
-
-          <div class="home__product-controls">
-            <div class="home__btns">
-              <button class="home__btn-minus btn">-</button>
-              <input class="home__number" type="text" value="1" readonly>
-              <button class="home__btn-plus btn">+</button>
-            </div>
-
-            <button class="home__order">Замовити</button>
-
-
-          </div>
-
         </div>
       </div>
 
       <div class="home__wrapper-info">
         <div class="home__info-container">
-
-
           <h1 class="home__info-title"><span>Досліджуйте</span> світ азійської кухні з NOA </h1>
-
           <div class="home__text">
             <p>Пікантна, яскрава, різноманітна та ну дуууже смачна — саме так можна охарактеризувати азійську кухню.
               Асортимент
