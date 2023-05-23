@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { ProductComponent } from './pages/product/product.component';
+import { ProductInfoComponent } from './pages/product-info/product-info.component';
 import { ThaiMarketComponent } from './pages/thai-market/thai-market.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -14,10 +15,14 @@ import { AdminProductComponent } from './admin/admin-product/admin-product.compo
 import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 
+
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'delivery', component: DeliveryComponent },
   { path: 'product', component: ProductComponent },
+  { path: 'product-info', component: ProductInfoComponent },
+
   { path: 'thai-market', component: ThaiMarketComponent },
   { path: 'favorite', component: FavoritesComponent },
   { path: 'about', component: AboutComponent },

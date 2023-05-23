@@ -27,6 +27,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductInfoComponent } from './pages/product-info/product-info.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AdminProductComponent,
     AdminCategoryComponent,
     AdminOrdersComponent,
+    ProductInfoComponent,
 
   ],
   imports: [
