@@ -14,15 +14,21 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminProductComponent } from './admin/admin-product/admin-product.component';
 import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
+import { ProductResolver } from './shared/services/product/product.resolver';
 
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'delivery', component: DeliveryComponent },
-  { path: 'product', component: ProductComponent },
-  { path: 'product-info', component: ProductInfoComponent },
-
+  {
+    path: 'product/:category', component: ProductComponent,
+  },
+  {
+    path: 'product/:category/:id', component: ProductInfoComponent, resolve: {
+      productInfo: ProductResolver
+    }
+  },
   { path: 'thai-market', component: ThaiMarketComponent },
   { path: 'favorite', component: FavoritesComponent },
   { path: 'about', component: AboutComponent },

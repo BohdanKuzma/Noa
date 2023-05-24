@@ -25,6 +25,11 @@ export class CategoryService {
     return docData(categoryDocumentReference, { idField: 'id' });
   }
 
+  getOneFirebasePath(path: string) {
+    const categoryDocumentReference = doc(this.afs, `categories/${path}`);
+    return docData(categoryDocumentReference, { idField: 'path' });
+  }
+
   createOneFirebase(category: ICategoryRequest) {
     return addDoc(this.categoryCollection, category);
   }

@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
+import { ICategoryResponse } from 'src/app/shared/interfaces/category.interface';
 import { IProductResponse } from 'src/app/shared/interfaces/product.interface';
+import { CategoryService } from 'src/app/shared/services/category/category.service';
 import { OrderService } from 'src/app/shared/services/order/order.service';
 import { ProductService } from 'src/app/shared/services/product/product.service';
+import { Firestore, doc, docData } from '@angular/fire/firestore';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,17 +15,23 @@ import { ProductService } from 'src/app/shared/services/product/product.service'
 export class HomeComponent {
 
   public userProducts: Array<IProductResponse> = [];
+  public userCategory: Array<ICategoryResponse> = [];
 
   public currentProduct!: IProductResponse;
+  public currentCategory!: ICategoryResponse;
 
 
   constructor(
     private productService: ProductService,
     private orderService: OrderService,
+    private categoryService: CategoryService,
+    private activateRoute: ActivatedRoute,
+    private afs: Firestore,
   ) { }
 
   ngOnInit(): void {
-    this.getData()
+    this.getData();
+    this.getCategory();
   }
   
   getData(): void {
@@ -29,6 +39,23 @@ export class HomeComponent {
       this.userProducts = data as IProductResponse[]
     })
   }
+
+  getCategory(): void {
+    this.categoryService.getAllFirebase().subscribe(data => {
+      this.userCategory = data as ICategoryResponse[]
+    })
+  }
+
+  getOneFirebase(id: string) {
+    const categoryDocumentReference = doc(this.afs, `categories/${id}`);
+    return docData(categoryDocumentReference, { idField: 'id' });
+  }
+
+  getOneFirebasePath(path: string) {
+    const categoryDocumentReference = doc(this.afs, `categories/${path}`);
+    return docData(categoryDocumentReference, { idField: 'path' });
+  }
+
 
   productCount(product: IProductResponse, value: boolean): void {
     if (value) {

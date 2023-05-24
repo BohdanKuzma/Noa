@@ -2,6 +2,7 @@
   <div class="home__container">
     <div class="home__slider">
       <img src="https://noa.ua/wp-content/uploads/2023/04/noa-culspecial-site-banner-fullhd-min-1-1550x630.png" alt="">
+      <img src="https://noa.ua/wp-content/uploads/2023/04/noa-culspecial-site-banner-fullhd_m-min-1.png" alt="">
     </div>
 
     <div class="home__wrapper">
@@ -11,21 +12,21 @@
 
       <div class="home__menu-categories">
         <ul class="home__categories-list">
-          <li class="home__categories-list-item"><a href="">Culinasia special</a></li>
-          <li class="home__categories-list-item"><a href="">Сніданки до 18:00</a></li>
-          <li class="home__categories-list-item"><a href="">Стартери</a></li>
-          <li class="home__categories-list-item"><a href="">Рамен</a></li>
-          <li class="home__categories-list-item"><a href="">Asian Wok</a></li>
-          <li class="home__categories-list-item"><a href="">Asian Poke</a></li>
-          <li class="home__categories-list-item"><a href="">Суші-бургери</a></li>
-          <li class="home__categories-list-item"><a href="">Роли та мак суші</a></li>
-          <li class="home__categories-list-item"><a href="">Роли</a></li>
-          <li class="home__categories-list-item"><a href="">Сети</a></li>
-          <li class="home__categories-list-item"><a href="">Десерти</a></li>
-          <li class="home__categories-list-item"><a href="">Напої</a></li>
-          <li class="home__categories-list-item"><a href="">Алкогольні напої 18+</a></li>
+            <li class="home__categories-list-item"><a [routerLink]="[ '/product/culinasia-special' ]" routerLinkActive="active" >Culinasia Special</a></li>
+            <li class="home__categories-list-item"><a [routerLink]="[ '/product/snidanku-do-18' ]" routerLinkActive="active">Сніданки до 18:00</a></li>
+            <li class="home__categories-list-item"><a [routerLink]="[ '/product/starteru' ]" routerLinkActive="active">Стартери</a></li>
+            <li class="home__categories-list-item"><a [routerLink]="[ '/product/ramen' ]" routerLinkActive="active">Рамен</a></li>
+            <li class="home__categories-list-item"><a [routerLink]="[ '/product/asian-wok' ]" routerLinkActive="active">Asian Wok</a></li>
+            <li class="home__categories-list-item"><a [routerLink]="[ '/product/asian-poke' ]" routerLinkActive="active">Asian Poke</a></li>
+            <li class="home__categories-list-item"><a [routerLink]="[ '/product/sushi-burgery' ]" routerLinkActive="active">Суші-бургери</a></li>
+            <li class="home__categories-list-item"><a [routerLink]="[ '/product/roly-maki-ta-sushi' ]" routerLinkActive="active">Роли та мак суші</a></li>
+            <li class="home__categories-list-item"><a [routerLink]="[ '/product/roly' ]" routerLinkActive="active">Роли</a></li>
+            <li class="home__categories-list-item"><a [routerLink]="[ '/product/deserts' ]" routerLinkActive="active">Десерти</a></li>
+            <li class="home__categories-list-item"><a [routerLink]="[ '/product/drinks' ]" routerLinkActive="active">Напої</a></li>
+            <li class="home__categories-list-item"><a [routerLink]="[ '/product/noa-shop' ]" routerLinkActive="active">Noa shop</a></li>
+            <li class="home__categories-list-item"><a [routerLink]="[ '/product/alcohol-drinks' ]" routerLinkActive="active">Алкогольні напої 18+</a></li>
         </ul>
-      </div>
+      </div>  
 
       <div class="home__wrapper-products">
         <div class="home__product-item" *ngFor="let product of userProducts">
@@ -39,7 +40,7 @@
           </div>
 
           <div class="home__product-desc">
-            <a href=""></a>
+            <a></a>
             <span>{{product.desc}}</span>
           </div>
 

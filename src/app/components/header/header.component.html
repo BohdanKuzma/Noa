@@ -10,17 +10,125 @@
       <ul class="header__ul">
         <li><a [routerLink]="[ '/home' ]" routerLinkActive="active">МЕНЮ</a>
 
-
           <div class="header__sub-menu">
-            <div class="header__sub-menu-item"*ngFor="let category of userCategory">
+            <a [routerLink]="[ '/product/culinasia-special' ]" routerLinkActive="active"class="header__sub-menu-item">
               <div class="header__sub-menu-img">
-                <img [src]="category.imgPath" alt="">
+                <img src="https://noa.ua/wp-content/uploads/2023/01/ramen-kari-z-krevetkamy-4-110x110.webp" alt="">
               </div>
-              <span>{{category.title}}</span>
-            </div>
+              <span>Culinasia special</span>
+            </a>
+            
+            <a [routerLink]="[ '/product/snidanku-do-18' ]" routerLinkActive="active" class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2022/07/syrnyky-panko-z-miso-karamellyu-110x110.png.pagespeed.ce_.vsww0h55tx-1.png" alt="">
+              </div>
+              <span>Cніданки до 18:00</span>
+            </a>
+
+            <a [routerLink]="[ '/product/starteru' ]" routerLinkActive="active" class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2022/07/imgonline-com-ua-resize-vwthrjnmy88qhnlo-1.png" alt="">
+              </div>
+              <span>Стартери</span>
+            </a>
+
+            <a [routerLink]="[ '/product/ramen' ]" routerLinkActive="active" class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2022/07/imgonline-com-ua-resize-kqbabpal4xori-1.png" alt="">
+              </div>
+              <span>Рамен</span>
+            </a>
+
+
+            <a [routerLink]="[ '/product/asian-wok' ]" routerLinkActive="active" class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2022/07/imgonline-com-ua-resize-kqbabpal4xori-1.png" alt="">
+              </div>
+              <span>Asian Wok</span>
+            </a>
+
+            <a [routerLink]="[ '/product/asian-poke' ]" routerLinkActive="active" class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2023/01/ramen-kari-z-krevetkamy-4-110x110.webp" alt="">
+              </div>
+              <span>Asian Poke</span>
+            </a>
+
+
+            <a [routerLink]="[ '/product/sushi-burgery' ]" routerLinkActive="active" class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2023/04/tuna-sushi-burger-110x110.png" alt="">
+              </div>
+              <span>Суші-бургери</span>
+            </a>
+            <a [routerLink]="[ '/product/roly-maki-ta-sushi' ]" routerLinkActive="active" class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2023/01/miks-sushi-110x110.webp" alt="">
+              </div>
+              <span>Роли та мак суші</span>
+            </a>
+
+            <a [routerLink]="[ '/product/roly' ]" routerLinkActive="active" class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2022/07/imgonline-com-ua-resize-ha7aj8qljfdxruru.png.pagespeed.ce_.ps3a4_3sz4-1.png" alt="">
+              </div>
+              <span>Роли</span>
+            </a>
+
+            <a [routerLink]="[ '/product/deserts' ]" routerLinkActive="active" class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2022/07/imgonline-com-ua-resize-onhi9k5v1ymk2fl.png.pagespeed.ce_.ygsr28oaua-1.png" alt="">
+              </div>
+              <span>Десерти</span>
+            </a>
+
+            <a [routerLink]="[ '/product/drinks' ]" routerLinkActive="active" class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2023/01/ramen-kari-z-krevetkamy-4-110x110.webp" alt="">
+              </div>
+              <span>Напої</span>
+            </a>
+
+            <a [routerLink]="[ '/product/noa-shop' ]" routerLinkActive="active"  class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2021/12/certificate-viz-2000-110x110.png" alt="">
+              </div>
+              <span>Noa shop</span>
+            </a>
+
+            <a [routerLink]="[ '/product/alcohol-drinks' ]" routerLinkActive="active" class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2022/10/gin-tonic-pink-site-110x110.png" alt="">
+              </div>
+              <span>Алкогольні напої 18+</span>
+            </a>
           </div>
         </li>
-        <li class="header__thai"><a [routerLink]="[ '/thai-market' ]" routerLinkActive="active">THAI MARKET</a></li>
+        <li class="header__thai"><a [routerLink]="[ '/thai-market' ]" routerLinkActive="active">THAI MARKET</a>
+          <div class="header__sub-menu">
+            <a [routerLink]="[ '/product/culinasia-special' ]" routerLinkActive="active"class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2023/01/ramen-kari-z-krevetkamy-4-110x110.webp" alt="">
+              </div>
+              <span>Culinasia special</span>
+            </a>
+            
+            <a [routerLink]="[ '/product/snidanku-do-18' ]" routerLinkActive="active" class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2022/07/syrnyky-panko-z-miso-karamellyu-110x110.png.pagespeed.ce_.vsww0h55tx-1.png" alt="">
+              </div>
+              <span>Cніданки до 18:00</span>
+            </a>
+
+            <a [routerLink]="[ '/product/starteru' ]" routerLinkActive="active" class="header__sub-menu-item">
+              <div class="header__sub-menu-img">
+                <img src="https://noa.ua/wp-content/uploads/2022/07/imgonline-com-ua-resize-vwthrjnmy88qhnlo-1.png" alt="">
+              </div>
+              <span>Стартери</span>
+            </a>
+          </div>
+        
+        </li>
         <li class="header__delivery"><a [routerLink]="[ '/delivery' ]" routerLinkActive="active">ДOСТАВКА</a></li>
       </ul>
     </nav>
