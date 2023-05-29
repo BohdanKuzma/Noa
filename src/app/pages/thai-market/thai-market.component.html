@@ -1,151 +1,44 @@
-<section class="thai">
-  <div class="thai__container">
-    <div class="thai__title title">Thai <span>Market</span></div>
-    <div class="thai__menu-categories">
-      <ul class="thai__categories-list">
-        <li class="thai__categories-list-item"><a href="">Thai satai</a></li>
-        <li class="thai__categories-list-item"><a href="">Thai lava grill</a></li>
-        <li class="thai__categories-list-item"><a href="">Thai wok</a></li>
-      </ul>
-    </div>
-
-  <div class="thai__wrapper-products">
-    <div class="thai__title title">Thai salaty</div>
-    <div class="thai__product-item">
-      <div class="thai__product-img">
-        <img src="https://noa.ua/wp-content/uploads/2023/04/laksa-350x350.webp" alt="">
+  <section class="thai">
+    <div class="thai__container">
+      <div class="thai__title title">Thai <span>Market</span></div>
+      <div class="thai__menu-categories">
+        <ul class="thai__categories-list">
+          <li class="thai__categories-list-item"><a [routerLink]="[ '/thai-market/thai-satay' ]"
+              routerLinkActive="active">Thai satai</a></li>
+          <li class="thai__categories-list-item"><a [routerLink]="[ '/thai-market/thai-lava-grill' ]"
+              routerLinkActive="active">Thai lava grill</a></li>
+          <li class="thai__categories-list-item"><a [routerLink]="[ '/thai-market/thai-wok' ]"
+              routerLinkActive="active">Thai wok</a></li>
+        </ul>
       </div>
 
-      <div class="thai__product-wrapper-title">
-        <a href="">Lorem, ipsum dolor.</a>
-        <span>259</span>
-      </div>
+      <div class="thai__wrapper-products">
+        <div class="thai__title title">{{currentCategoryName}}</div>
+        <div class="thai__product-item" *ngFor="let product of userProducts">
+          <div class="thai__product-img">
+            <img [src]="product.imgPath" alt="">
+          </div>
 
-      <div class="thai__product-desc">
-        <a href=""></a>
-        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, quia!</span>
-      </div>
+          <div class="thai__product-wrapper-title">
+            <a [routerLink]="[ '/product/'+product.category.path, product.id ]">{{product.title}}</a>
+            <span>{{product.price}}</span>
+          </div>
 
-      <div class="thai__product-controls">
-        <div class="thai__btns">
-          <button class="thai__btn-minus btn">-</button>
-          <input class="thai__number" type="text" value="1" readonly>
-          <button class="thai__btn-plus btn">+</button>
+          <div class="thai__product-desc">
+            <a href=""></a>
+            <span>{{product.desc}}</span>
+          </div>
+
+          <div class="thai__product-controls">
+            <div class="thai__btns">
+              <button class="thai__btn-minus btn" (click)="productCount(product, false)">-</button>
+              <input class="thai__number" type="text" [value]="product.count" readonly>
+              <button class="thai__btn-plus btn" (click)="productCount(product, true)">+</button>
+            </div>
+
+            <button class="thai__order">Замовити</button>
+          </div>
         </div>
-
-        <button class="thai__order">Замовити</button>
-      </div>
-
-    </div>
-
-    <div class="thai__product-item">
-      <div class="thai__product-img">
-        <img src="https://noa.ua/wp-content/uploads/2023/04/laksa-350x350.webp" alt="">
-      </div>
-
-      <div class="thai__product-wrapper-title">
-        <a href="">Lorem, ipsum dolor.</a>
-        <span>259</span>
-      </div>
-
-      <div class="thai__product-desc">
-        <a href=""></a>
-        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, quia!</span>
-      </div>
-
-      <div class="thai__product-controls">
-        <div class="thai__btns">
-          <button class="thai__btn-minus btn">-</button>
-          <input class="thai__number" type="text" value="1" readonly>
-          <button class="thai__btn-plus btn">+</button>
-        </div>
-        <button class="thai__order">Замовити</button>
       </div>
     </div>
-
-    <div class="thai__product-item">
-      <div class="thai__product-img">
-        <img src="https://noa.ua/wp-content/uploads/2023/04/laksa-350x350.webp" alt="">
-      </div>
-
-      <div class="thai__product-wrapper-title">
-        <a href="">Lorem, ipsum dolor.</a>
-        <span>259</span>
-      </div>
-
-      <div class="thai__product-desc">
-        <a href=""></a>
-        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, quia!</span>
-      </div>
-
-      <div class="thai__product-controls">
-        <div class="thai__btns">
-          <button class="thai__btn-minus btn">-</button>
-          <input class="thai__number" type="text" value="1" readonly>
-          <button class="thai__btn-plus btn">+</button>
-        </div>
-
-        <button class="thai__order">Замовити</button>
-
-      </div>
-    </div>
-
-
-    <div class="thai__product-item">
-      <div class="thai__product-img">
-        <img src="https://noa.ua/wp-content/uploads/2023/04/laksa-350x350.webp" alt="">
-      </div>
-
-      <div class="thai__product-wrapper-title">
-        <a href="">Lorem, ipsum dolor.</a>
-        <span>259</span>
-      </div>
-
-      <div class="thai__product-desc">
-        <a href=""></a>
-        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, quia!</span>
-      </div>
-
-      <div class="thai__product-controls">
-        <div class="thai__btns">
-          <button class="thai__btn-minus btn">-</button>
-          <input class="thai__number" type="text" value="1" readonly>
-          <button class="thai__btn-plus btn">+</button>
-        </div>
-
-        <button class="thai__order">Замовити</button>
-
-      </div>
-
-    </div>
-
-    <div class="thai__product-item">
-      <div class="thai__product-img">
-        <img src="https://noa.ua/wp-content/uploads/2023/04/laksa-350x350.webp" alt="">
-      </div>
-
-      <div class="thai__product-wrapper-title">
-        <a href="">Lorem, ipsum dolor.</a>
-        <span>259</span>
-      </div>
-
-      <div class="thai__product-desc">
-        <a href=""></a>
-        <span>Lorem ipsum dolor sit amet.</span>
-      </div>
-
-      <div class="thai__product-controls">
-        <div class="thai__btns">
-          <button class="thai__btn-minus btn">-</button>
-          <input class="thai__number" type="text" value="1" readonly>
-          <button class="thai__btn-plus btn">+</button>
-        </div>
-
-        <button class="thai__order">Замовити</button>
-
-
-      </div>
-    </div>
-    </div>
-  </div>
-</section>
+  </section>

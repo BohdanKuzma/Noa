@@ -2,7 +2,7 @@
   <div class="home__container">
     <div class="home__slider">
       <img src="https://noa.ua/wp-content/uploads/2023/04/noa-culspecial-site-banner-fullhd-min-1-1550x630.png" alt="">
-      <img src="https://noa.ua/wp-content/uploads/2023/04/noa-culspecial-site-banner-fullhd_m-min-1.png" alt="">
+  
     </div>
 
     <div class="home__wrapper">
@@ -30,17 +30,16 @@
 
       <div class="home__wrapper-products">
         <div class="home__product-item" *ngFor="let product of userProducts">
-          <div class="home__product-img">
+          <a [routerLink]="[ '/product/'+product.category.path, product.id ]" class="home__product-img">
             <img [src]="product.imgPath" alt="">
-          </div>
+          </a>
 
           <div class="home__product-wrapper-title">
-            <a>{{product.title}}</a>
-            <span>{{product.price}}</span>
+            <a [routerLink]="[ '/product/'+product.category.path, product.id ]">{{product.title}}</a>
+            <span>{{product.price * product.count}}</span>
           </div>
 
           <div class="home__product-desc">
-            <a></a>
             <span>{{product.desc}}</span>
           </div>
 

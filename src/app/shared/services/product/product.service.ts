@@ -16,6 +16,7 @@ export class ProductService {
     this.productCollection = collection(this.afs, 'products')
   }
 
+ 
   getAllFirebase() {
     return collectionData(this.productCollection, { idField: 'id' });
   }

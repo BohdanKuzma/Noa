@@ -1,55 +1,67 @@
 <section class="product">
-    <div class="product__container">
+  <div class="product__container">
 
-      <div class="product__wrapper">
-        <div class="product__menu-categories">
-          <ul class="product__categories-list">
-            <li class="product__categories-list-item"><a [routerLink]="[ '/product/culinasia-special' ]" routerLinkActive="active" >Culinasia Special</a></li>
-            <li class="product__categories-list-item"><a [routerLink]="[ '/product/snidanku-do-18' ]" routerLinkActive="active">Сніданки до 18:00</a></li>
-            <li class="product__categories-list-item"><a [routerLink]="[ '/product/starteru' ]" routerLinkActive="active">Стартери</a></li>
-            <li class="product__categories-list-item"><a [routerLink]="[ '/product/ramen' ]" routerLinkActive="active">Рамен</a></li>
-            <li class="product__categories-list-item"><a [routerLink]="[ '/product/asian-wok' ]" routerLinkActive="active">Asian Wok</a></li>
-            <li class="product__categories-list-item"><a [routerLink]="[ '/product/asian-poke' ]" routerLinkActive="active">Asian Poke</a></li>
-            <li class="product__categories-list-item"><a [routerLink]="[ '/product/sushi-burgery' ]" routerLinkActive="active">Суші-бургери</a></li>
-            <li class="product__categories-list-item"><a [routerLink]="[ '/product/roly-maki-ta-sushi' ]" routerLinkActive="active">Роли та мак суші</a></li>
-            <li class="product__categories-list-item"><a [routerLink]="[ '/product/roly' ]" routerLinkActive="active">Роли</a></li>
-            <li class="product__categories-list-item"><a [routerLink]="[ '/product/deserts' ]" routerLinkActive="active">Десерти</a></li>
-            <li class="product__categories-list-item"><a [routerLink]="[ '/product/drinks' ]" routerLinkActive="active">Напої</a></li>
-            <li class="product__categories-list-item"><a [routerLink]="[ '/product/noa-shop' ]" routerLinkActive="active">Noa shop</a></li>
-            <li class="product__categories-list-item"><a [routerLink]="[ '/product/alcohol-drinks' ]" routerLinkActive="active">Алкогольні напої 18+</a></li>
-          </ul>
-        </div>
-  
-        <div class="product__wrapper-products">
-          <div class="product__product-item">
-            <div class="product__product-img">
-              <img [src]="" alt="">
+    <div class="product__wrapper">
+      <div class="product__menu-categories">
+        <ul class="product__categories-list">
+          <li class="product__categories-list-item"><a [routerLink]="[ '/product/culinasia-special' ]"
+              routerLinkActive="active">Culinasia Special</a></li>
+          <li class="product__categories-list-item"><a [routerLink]="[ '/product/snidanku-do-18' ]"
+              routerLinkActive="active">Сніданки до 18:00</a></li>
+          <li class="product__categories-list-item"><a [routerLink]="[ '/product/starteru' ]"
+              routerLinkActive="active">Стартери</a></li>
+          <li class="product__categories-list-item"><a [routerLink]="[ '/product/ramen' ]"
+              routerLinkActive="active">Рамен</a></li>
+          <li class="product__categories-list-item"><a [routerLink]="[ '/product/asian-wok' ]"
+              routerLinkActive="active">Asian Wok</a></li>
+          <li class="product__categories-list-item"><a [routerLink]="[ '/product/asian-poke' ]"
+              routerLinkActive="active">Asian Poke</a></li>
+          <li class="product__categories-list-item"><a [routerLink]="[ '/product/sushi-burgery' ]"
+              routerLinkActive="active">Суші-бургери</a></li>
+          <li class="product__categories-list-item"><a [routerLink]="[ '/product/roly-maki-ta-sushi' ]"
+              routerLinkActive="active">Роли та мак суші</a></li>
+          <li class="product__categories-list-item"><a [routerLink]="[ '/product/roly' ]"
+              routerLinkActive="active">Роли</a></li>
+          <li class="product__categories-list-item"><a [routerLink]="[ '/product/deserts' ]"
+              routerLinkActive="active">Десерти</a></li>
+          <li class="product__categories-list-item"><a [routerLink]="[ '/product/drinks' ]"
+              routerLinkActive="active">Напої</a></li>
+          <li class="product__categories-list-item"><a [routerLink]="[ '/product/noa-shop' ]"
+              routerLinkActive="active">Noa shop</a></li>
+          <li class="product__categories-list-item"><a [routerLink]="[ '/product/alcohol-drinks' ]"
+              routerLinkActive="active">Алкогольні напої 18+</a></li>
+        </ul>
+      </div>
+
+      <div class="product__wrapper-products">
+        <div class="product__product-item" *ngFor="let product of userProducts">
+          <a [routerLink]="[ '/product/'+product.category.path, product.id ]" class="product__product-img">
+            <img [src]="product.imgPath" alt="">
+          </a>
+
+          <div class="product__product-wrapper-title">
+            <a [routerLink]="[ '/product/'+product.category.path, product.id ]">{{product.title}}</a> 
+            <span>{{product.price}}</span>
+          </div>
+
+          <div class="product__product-desc">
+
+            <span>{{product.desc}}</span>
+          </div>
+
+          <div class="product__product-controls">
+            <div class="product__btns">
+              <button type="button" class="product__btn-minus btn" (click)="productCount(product, false)">-</button>
+              <input class="product__number" type="text" [value]="product.count" readonly>
+              <button type="button" class="product__btn-plus btn" (click)="productCount(product, true)">+</button>
             </div>
-  
-            <div class="product__product-wrapper-title">
-              <a></a>
-              <span></span>
-            </div>
-  
-            <div class="product__product-desc">
-              <a href=""></a>
-              <span></span>
-            </div>
-  
-            <div class="product__product-controls">
-              <div class="product__btns">
-                <button type="button" class="product__btn-minus btn">-</button>
-                <input class="product__number" type="text" readonly>
-                <button type="button" class="product__btn-plus btn">+</button>
-              </div>
-              <button class="product__order">Замовити</button>
-            </div>
+            <button class="product__order">Замовити</button>
           </div>
         </div>
-  
-      
       </div>
+
+
     </div>
-  
-  </section>
-  
+  </div>
+
+</section>

@@ -25,9 +25,10 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private categoryService: CategoryService,
-    private activateRoute: ActivatedRoute,
     private router: Router,
     private productService: ProductService,
+    private activatedRoute: ActivatedRoute,
+
   ) {
     this.eventSubscription = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -37,8 +38,10 @@ export class ProductComponent implements OnInit {
   }
 
   getData(): void {
+    const categoryName = this.activatedRoute.snapshot.paramMap.get('category') as string;
     this.productService.getAllFirebase().subscribe(data => {
-      this.userProducts = data as IProductResponse[]
+      let categoryProducts = data.filter(item => item['category']['path'] == categoryName)
+      this.userProducts = categoryProducts as IProductResponse[]
     })
   }
 
@@ -46,5 +49,13 @@ export class ProductComponent implements OnInit {
     this.categoryService.getAllFirebase().subscribe(data => {
       this.userCategory = data as ICategoryResponse[]
     })
+  }
+
+  productCount(product: IProductResponse, value: boolean): void {
+    if (value) {
+      ++product.count;
+    } else if (!value && product.count > 1) {
+      --product.count
+    }
   }
 }

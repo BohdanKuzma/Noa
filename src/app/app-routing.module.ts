@@ -29,7 +29,8 @@ const routes: Routes = [
       productInfo: ProductResolver
     }
   },
-  { path: 'thai-market', component: ThaiMarketComponent },
+  { path: 'thai-market/:category', component: ThaiMarketComponent },
+  { path: 'thai-market/:category/:id', component: ThaiMarketComponent },
   { path: 'favorite', component: FavoritesComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contacts', component: ContactsComponent },
