@@ -1,0 +1,47 @@
+<section class="product-info">
+    <div class="product-info__container">
+      <ul class="product-info__routing">
+        <li class="product-info__routing-li"><span [routerLink]="[ '' ]">Головна</span></li>
+        <li class="product-info__routing-li"><span [routerLink]="['/product/'+currentProduct.category.path]">{{currentProduct.category.title}}</span></li>
+        <li><span>{{currentProduct.title}}</span></li>
+      </ul>
+  
+      <div class="product-info__wrapper">
+        <div>
+          <img [src]="currentProduct.imgPath">
+        </div>
+  
+        <div class="product-info__details">
+          <div class="product-info__size">
+            <span>{{currentProduct.weight}}</span>
+            г
+          </div>
+  
+          <h1 class="product-info__title title">{{currentProduct.title}}</h1>
+  
+          <div class="product-info__desc">{{currentProduct.desc}}</div>
+  
+          <div class="product-info__detail-control">
+            <div class="product-info__btns">
+              <button type="button" class="product-info__btn-minus btn" (click)="productCount(currentProduct, false)">-</button>
+              <input class="product-info__number" type="text" value="1" [value]="currentProduct.count">
+              <button type="button" class="product-info__btn-plus btn" (click)="productCount(currentProduct, true)">+</button>
+            </div>
+  
+            <div class="product-info__price">
+              <span>{{currentProduct.price * currentProduct.count}}</span>
+              грн
+            </div>
+          </div>
+  
+          <div class="product-info__details-btn">
+            <button class="product-info__order">Додати в кошик</button>
+          </div>
+        </div>
+  
+      </div>
+  
+  
+    </div>
+  </section>
+  

@@ -12,10 +12,10 @@ export class HeaderComponent {
   public userCategory: Array<ICategoryResponse> = [];
 
   public currentProduct!: ICategoryResponse;
-
+  public menuStatus = false;
 
   constructor(
-   private categoryService: CategoryService
+    private categoryService: CategoryService
   ) { }
 
   ngOnInit(): void {
@@ -27,5 +27,12 @@ export class HeaderComponent {
       this.userCategory = data as ICategoryResponse[]
     })
   }
+
+  openMenu(): void {
+    this.menuStatus = !this.menuStatus;
+    document.body.classList.toggle('_lock')
+    
+  }
+
 
 }

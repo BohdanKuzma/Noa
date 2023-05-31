@@ -17,8 +17,6 @@ import { AboutComponent } from './pages/about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminProductComponent } from './admin/admin-product/admin-product.component';
 import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
-import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
-
 
 import { initializeApp } from "firebase/app";
 import { environment } from 'src/app/environments/environment';
@@ -28,6 +26,8 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductInfoComponent } from './pages/product-info/product-info.component';
+import { ThaiMarketInfoComponent } from './pages/thai-market-info/thai-market-info.component';
+
 
 
 @NgModule({
@@ -45,9 +45,8 @@ import { ProductInfoComponent } from './pages/product-info/product-info.componen
     AdminComponent,
     AdminProductComponent,
     AdminCategoryComponent,
-    AdminOrdersComponent,
     ProductInfoComponent,
-
+    ThaiMarketInfoComponent,
   ],
   imports: [
     BrowserModule,

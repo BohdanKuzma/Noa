@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-
 import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { ProductComponent } from './pages/product/product.component';
 import { ProductInfoComponent } from './pages/product-info/product-info.component';
@@ -13,10 +11,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminProductComponent } from './admin/admin-product/admin-product.component';
 import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
-import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { ProductResolver } from './shared/services/product/product.resolver';
-
-
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -39,7 +34,6 @@ const routes: Routes = [
     path: "admin", component: AdminComponent, children: [
       { path: "category", component: AdminCategoryComponent },
       { path: "product", component: AdminProductComponent },
-      { path: "orders", component: AdminOrdersComponent },
       { path: "", pathMatch: "full", redirectTo: "category" },
     ]
   }

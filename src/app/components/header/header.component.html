@@ -34,7 +34,7 @@
 
             <a [routerLink]="[ '/product/ramen' ]" routerLinkActive="active" class="header__sub-menu-item">
               <div class="header__sub-menu-img">
-                <img src="https://noa.ua/wp-content/uploads/2022/07/imgonline-com-ua-resize-kqbabpal4xori-1.png" alt="">
+                <img src="https://noa.ua/wp-content/uploads/2022/07/menu_ramen.png" alt="">
               </div>
               <span>Рамен</span>
             </a>
@@ -84,7 +84,7 @@
 
             <a [routerLink]="[ '/product/drinks' ]" routerLinkActive="active" class="header__sub-menu-item">
               <div class="header__sub-menu-img">
-                <img src="https://noa.ua/wp-content/uploads/2023/01/ramen-kari-z-krevetkamy-4-110x110.webp" alt="">
+                <img src="https://noa.ua/wp-content/uploads/2021/03/imgonline-com-ua-resize-5vx8b1bfdv4tkoe.png"   alt="">
               </div>
               <span>Напої</span>
             </a>
@@ -167,16 +167,28 @@
     <div class="header__auth">
       <div class="header__auth-wrapper" [routerLink]="[ '/admin' ]" routerLinkActive="active">
         <img src="assets/images/header_user.svg" alt="">
-        <span>Вхід</span>
       </div>
 
     </div>
 
-    <div class="header__burger-menu">
+    <div class="header__burger-menu" (click)="openMenu()">
       <div class="header__border">
       </div>
-
     </div>
 
+    <div class="header__menu-block" [ngClass]="{'_active': menuStatus}">
+        <div class="header__menu-container">
+          <nav class="header__nav-menu">
+            <ul class="header__menu-ul">
+              <li class="header__menu-item" (click)="openMenu()"><a class="header__menu-link" [routerLink]="[ '/about' ]" routerLinkActive="active" >Про нас</a></li>
+              <li class="header__menu-item" (click)="openMenu()"><a class="header__menu-link" [routerLink]="[ '/delivery' ]" routerLinkActive="active" >Доставка</a></li>
+              <li class="header__menu-item" (click)="openMenu()"><a class="header__menu-link" [routerLink]="[ '/home' ]" routerLinkActive="active" >Вакансії</a></li>
+              <li class="header__menu-item" (click)="openMenu()"><a class="header__menu-link" [routerLink]="[ '/contacts' ]" routerLinkActive="active" >Контакти</a></li>
+              <li class="header__menu-item-close" (click)="openMenu()" >x</li>
+
+            </ul>
+          </nav>
+        </div>
+    </div>
   </div>
 </header>

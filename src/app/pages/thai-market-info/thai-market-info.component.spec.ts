@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminOrdersComponent } from './admin-orders.component';
+import { ThaiMarketInfoComponent } from './thai-market-info.component';
 
-describe('AdminOrdersComponent', () => {
-  let component: AdminOrdersComponent;
-  let fixture: ComponentFixture<AdminOrdersComponent>;
+describe('ThaiMarketInfoComponent', () => {
+  let component: ThaiMarketInfoComponent;
+  let fixture: ComponentFixture<ThaiMarketInfoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminOrdersComponent ]
+      declarations: [ ThaiMarketInfoComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdminOrdersComponent);
+    fixture = TestBed.createComponent(ThaiMarketInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
